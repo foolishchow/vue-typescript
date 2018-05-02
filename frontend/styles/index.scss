@@ -1,0 +1,23 @@
+/*
+ * @Author: zhoupeng
+ * @Date:   2017-11-28 16:41:55
+ * @Last Modified by: zhoupeng
+ * @Last Modified time: 2018-03-30 19:07:28
+*/
+
+@import './animation.scss';
+
+body{
+	color:#333;
+	margin:0;
+}
+body, input {
+    font-family: 'Microsoft YaHei',Verdana,sans-serif;
+    line-height: 1.5;
+    color: #333;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}

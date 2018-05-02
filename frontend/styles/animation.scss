@@ -1,0 +1,29 @@
+/*
+* @Author: zhoupeng
+* @Date:   2017-11-24 12:50:31
+* @Last Modified by:   zhoupeng
+* @Last Modified time: 2018-01-09 10:58:07
+*/
+@keyframes roate{
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes shine {
+    0%{
+        opacity: 0.2;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.2;
+    }
+}

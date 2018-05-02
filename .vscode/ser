@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+const cp = require('child_process')
+const { resolve } = require('path')
+
+const runServer = function () {
+  let argu = require('../server/package.json').scripts.dev.replace(/^\s+|\s+$/gi, '');
+  let total = resolve(__dirname, '../server/node_modules/.bin/', argu).split(' ');
+  const egg = cp.fork(total.shift(), total, {
+    cwd: resolve(__dirname, '../server'),
+    env: process.env
+  });
+  process.on('exit', () => {
+    egg.disconnect();
+    process.stdout.on('drain', () => {
+      process.exit();
+    })
+  });
+}
+
+const serverTsServer = function (isDev = true) {
+  let args = ['-w', '-p', resolve(__dirname, '../server/tsconfig.json')]
+  if (!isDev) args.shift();
+  const tsc = cp.spawn('tsc', args, {
+    cwd: resolve(__dirname, '../server'),
+    stdio: [0, 1, 2]
+  });
+  tsc.on('error', (e) => {
+    console.error(e);
+    process.exit();
+  });
+  process.on('exit', () => {
+    tsc.disconnect();
+  });
+}
+
+runServer()
+serverTsServer();

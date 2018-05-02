@@ -1,0 +1,197 @@
+/*
+ * @Author: zhoupeng
+ * @Date:   2017-11-28 16:39:07
+ * @Last Modified by: zhoupeng
+ * @Last Modified time: 2018-03-22 23:11:56
+*/
+
+html {
+  font-size: 50px;
+}
+
+body {
+  font-size: 24px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #f4f4f4;
+}
+
+body.scroll-disabled {
+  overflow: hidden;
+}
+
+.clearfix {
+  position: relative;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: '';
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.tfb,
+.touch-feed-back {
+  background-color: #f6f6f6;
+}
+
+.jqd-wrap.is-flex{
+  display: flex;
+  flex-direction: column;
+  height: 100%
+}
+.jqd-wrap.is-flex>.flexer{
+  flex:1;
+}
+
+.bg-white{
+  background-color:#fff;
+}
+
+.jqd-arrow-down:after{
+  content:'';
+  border-color: #fff transparent transparent;
+  border: .25rem solid #fff;
+  border-top-color: #333;
+  margin-left: .4rem;
+  display: inline-block;
+  margin-right: -.1rem;
+  position: relative;
+  top: .25rem;
+}
+
+.is-rotate-90,
+.is-before-rotate-90:before,
+.is-after-rotate-90:after{
+  transform: rotate(90deg)
+}
+.is-rotate-180,
+.is-before-rotate-180:before,
+.is-after-rotate-180:after{
+  transform: rotate(180deg)
+}
+.is-rotate-270,
+.is-before-rotate-270:before,
+.is-after-rotate-270:after{
+  transform: rotate(270deg)
+}
+.is-rotate-360,
+.is-before-rotate-360:before,
+.is-after-rotate-360:after{
+  transform: rotate(360deg)
+}
+@media screen and (min-width: 320px) {
+  html {
+    font-size: 21.33px
+  }
+
+  body {
+    font-size: 12px
+  }
+}
+
+@media screen and (min-width: 360px) {
+  html {
+    font-size: 24px
+  }
+
+  body {
+    font-size: 12px
+  }
+}
+
+@media screen and (min-width: 375px) {
+  html {
+    font-size: 25px
+  }
+
+  body {
+    font-size: 12px
+  }
+}
+
+@media screen and (min-width: 384px) {
+  html {
+    font-size: 25.6px
+  }
+
+  body {
+    font-size: 14px
+  }
+}
+
+@media screen and (min-width: 400px) {
+  html {
+    font-size: 26.67px
+  }
+
+  body {
+    font-size: 14px
+  }
+}
+
+@media screen and (min-width: 414px) {
+  html {
+    font-size: 27.6px
+  }
+
+  body {
+    font-size: 14px
+  }
+}
+
+@media screen and (min-width: 424px) {
+  html {
+    font-size: 28.27px
+  }
+
+  body {
+    font-size: 14px
+  }
+}
+
+@media screen and (min-width: 480px) {
+  html {
+    font-size: 32px
+  }
+
+  body {
+    font-size: 15.36px
+  }
+}
+
+@media screen and (min-width: 540px) {
+  html {
+    font-size: 36px
+  }
+
+  body {
+    font-size: 17.28px
+  }
+}
+
+@media screen and (min-width: 720px) {
+  html {
+    font-size: 48px
+  }
+
+  body {
+    font-size: 23.04px
+  }
+}
+
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 50px
+  }
+
+  body {
+    font-size: 24px
+  }
+}

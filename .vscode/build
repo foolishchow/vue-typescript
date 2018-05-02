@@ -1,0 +1,99 @@
+#!/usr/bin/env node
+const fs = require('fs');
+const { unlinkSync, rmdirSync, readdirSync, statSync } = require('fs')
+const { resolve } = require('path');
+const { fork, spawn, spawnSync } = require('child_process');
+const os = require('os')
+const readline = require('readline')
+let cmd = 'yarn';
+
+function deleteall(e) { fs.existsSync(e) && (fs.readdirSync(e).filter(e => !e.startsWith(".")).forEach(function (s, t) { var n = resolve(e, s); fs.statSync(n).isDirectory() ? deleteall(n) : fs.unlinkSync(n) }), fs.rmdirSync(e)) }
+
+const removeBuilded = async function () {
+  let root = resolve(__dirname, '../server/app/public')
+  let files = readdirSync(root);
+  files.filter(f => !f.startsWith('.')).forEach(file => {
+    file = resolve(root, file)
+    if (statSync(file).isDirectory()) {
+      deleteall(file)
+    } else {
+      unlinkSync(file)
+    }
+  })
+}
+
+const buildFrontEnd = function () {
+  removeBuilded()
+  let args = cmd == 'yarn' ? ['build'] : ['run', 'build']
+  spawnSync(cmd, args, {
+    cwd: resolve(__dirname, '../frontend'),
+    stdio: [0, 1, 2]
+  })
+}
+const RemoveDepsAndReInstall = function () {
+  const serverRoot = resolve(__dirname, '../server');
+  const spawnOpt = { cwd: serverRoot, stdio: [0, 1, 2] }
+  if (os.platform == 'win32') {
+    spawnSync('rmdir', ['node_modules', '/S', '/Q'], spawnOpt)
+  } else {
+    spawnSync('rm', ['-rf', 'node_modules'], spawnOpt)
+  }
+  let args = cmd == 'yarn' ? ['--production'] : ['install', '--production']
+  spawnSync(cmd, args, spawnOpt)
+}
+const ReInstallDeps = function () {
+  const serverRoot = resolve(__dirname, '../server');
+  const spawnOpt = { cwd: serverRoot }
+
+  let args = cmd == 'yarn' ? [] : ['install']
+  console.info(`reinstall ./server dependencies , in case you meet problem in dev`)
+  spawnSync(cmd, args, spawnOpt)
+}
+const tarOrConsole = function () {
+  const serverRoot = resolve(__dirname, '../server');
+  if (os.platform == 'win32') {
+    console.info(`build success , please upload ${serverRoot} to your server`)
+  } else {
+    spawnSync('tar', ['-zcf', './release.tgz', './server'], {
+      cwd: resolve(__dirname, '..'), stdio: [0, 1, 2]
+    })
+    console.info(``)
+    console.info(`build success , please upload ./release.tgz to your server`)
+    console.info(``)
+    ReInstallDeps();
+  }
+}
+
+const buildServer = function () {
+  const serverRoot = resolve(__dirname, '../server');
+  spawnSync('tsc', [resolve(serverRoot, 'tsconfig.json')], {
+    cwd: resolve(__dirname, '../server'), stdio: [0, 1, 2]
+  })
+}
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.question('npm or yarn ? (npm/yarn)  ', (answer) => {
+  // TODO: Log the answer in a database
+  // console.log(`Thank you for your valuable feedback: ${answer}`);
+  if (answer.startsWith('n')) {
+    cmd = 'npm'
+  };
+
+  console.info('')
+  console.info(`ok ! we'll use ${cmd} build!`)
+  console.info('')
+  rl.close();
+  buildServer();
+  RemoveDepsAndReInstall();
+  buildFrontEnd();
+  tarOrConsole();
+});
+
+
+
+
+
