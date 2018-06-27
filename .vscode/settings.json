@@ -24,6 +24,6 @@
     "**/npm-shrinkwrap.json": true,
     "**/.babelrc": true,
     // "**/.webpackrc.ts": true,
-    "**/.webpack": true
+    // "**/.webpack": true
   }
 }
