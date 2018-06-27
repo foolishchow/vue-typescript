@@ -36,7 +36,7 @@
   ```
 
 - sass & BEM 实现   
-  首先这段代码抄来的。源目录在[element/packages/theme-chalk/src/mixins](https://github.com/ElemeFE/element/tree/dev/packages/theme-chalk/src/mixins)
+  首先这段代码抄来的。源目录在[element/packages/theme-chalk/src/mixins](https://github.com/ElemeFE/element/tree/dev/packages/theme-chalk/src/mixins)
   BEM配置在`internal/styles/mixin/config.scss`
   ```
   $namespace: 'app'; //namespace 前缀
@@ -56,7 +56,7 @@
 
 - webpack 配置    
   内置的http服务器是从网上copy的,但是现在也不记得在哪了.[找到补上]   
-  使用了`webpack-chain`来配置,配置文件是`.webpackrc.ts`    
+  使用了`webpack-chain`来配置,配置文件是`.webpackrc.ts`    
   至于如何加载和打包,代码实现在`.webpack`下   
   很多的配置写在`package.json`了,具体实现在`.webpackrc.ts`中。
 
@@ -72,13 +72,13 @@
 │   ├── cache.ts  //存放cache key 配置文件
 │   ├── configAjax.ts  // ajax 拦截以及参数配置
 │   ├── index.html    // html-webpack-plugin 模板文件
-│   ├── inteface.ts   // ajax 请求配置文件  照着示例可以在pages/cache/index.tsx 看到效果
+│   ├── inteface.ts   // ajax 请求配置文件  照着示例可以在pages/cache/index.tsx 看到效果
 │   ├── responses
 │   │   ├── common.ts // ajax 请求常用的数据类型定义
 │   │   └── login.ts  // ajax 请求常用的数据类型定义
 │   └── router.ts   // vue-router 定义页面
 ├── images
-├── index.ts   // entry
+├── index.ts   // entry
 ├── internal  //内置的一些
 │   ├── ajax  //ajax 简单的封装
 │   │   ├── ajax.ts
