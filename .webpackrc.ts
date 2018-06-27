@@ -34,7 +34,7 @@ const FileName = isProd ? '[name]_[hash:8]' : '[name]'
 const ChunkName = isProd ? '[name]_[chunkhash:8]' : 'child/[name]'
 
 OutPut
-  .path(resolve(__dirname, '../dist/public'))
+  .path(resolve(__dirname, './dist/public'))
   .publicPath('/public/')
   .filename(`scripts/${FileName}.js`)
   .chunkFilename(`scripts/${ChunkName}.js`)
