@@ -500,9 +500,9 @@ babel-plugin-check-es2015-constants@^6.22.0:
   dependencies:
     babel-runtime "^6.22.0"
 
-"babel-plugin-jsx-event-modifiers@git+https://github.com/foolishchow/babel-plugin-jsx-event-modifiers.git#master":
+babel-plugin-jsx-event-modifiers@^2.0.5:
   version "2.0.5"
-  resolved "git+https://github.com/foolishchow/babel-plugin-jsx-event-modifiers.git#1f341e1fd3e4bf122f465b6c7c56143e87f0998c"
+  resolved "https://registry.npmjs.org/babel-plugin-jsx-event-modifiers/-/babel-plugin-jsx-event-modifiers-2.0.5.tgz#93e6ebb5d7553bb08f9fedbf7a0bee3af09a0472"
 
 babel-plugin-jsx-v-model@^2.0.3:
   version "2.0.3"
@@ -5309,9 +5309,9 @@ vue-template-es2015-compiler@^1.6.0:
   version "1.6.0"
   resolved "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.6.0.tgz#dc42697133302ce3017524356a6c61b7b69b4a18"
 
-"vue-typescript-util@git+https://github.com/foolishchow/vue-typescript-util.git#master":
+vue-typescript-util@^0.0.1:
   version "0.0.1"
-  resolved "git+https://github.com/foolishchow/vue-typescript-util.git#91ddcb8c489f6046a8e43f09f86d49a0995db1cf"
+  resolved "https://registry.npmjs.org/vue-typescript-util/-/vue-typescript-util-0.0.1.tgz#aa31b3f50500f0dac7524e161afe989b02800af3"
 
 vue@^2.5.16:
   version "2.5.16"
