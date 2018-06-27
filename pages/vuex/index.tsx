@@ -14,7 +14,7 @@ export class VuexPage extends PageComponent {
         <div class="title">namespaced module (store/module/dom)</div>
         <div class="body">
           <p><span class="subtitle"> mapstate </span>Active: {this.Active}  </p>
-          <p><span class="subtitle">mapgetter</span>hasActive: {this.hasActive}  </p>
+          <p><span class="subtitle">mapgetter</span>hasActive: {this.hasActive.toString()}  </p>
           <p>
             <span class="subtitle">mutations</span>
             <button on-click={() => { this.Active++ }}>add Active</button>
