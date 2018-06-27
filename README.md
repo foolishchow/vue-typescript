@@ -36,7 +36,8 @@
   ```
 
 - sass & BEM 实现   
-  首先这段代码抄来的。源目录在[element/packages/theme-chalk/src/mixins](https://github.com/ElemeFE/element/tree/dev/packages/theme-chalk/src/mixins)
+  首先这段代码抄来的。  
+  源代码在[element/packages/theme-chalk/src/mixins](https://github.com/ElemeFE/element/tree/dev/packages/theme-chalk/src/mixins)   
   BEM配置在`internal/styles/mixin/config.scss`
   ```
   $namespace: 'app'; //namespace 前缀
@@ -44,7 +45,7 @@
   $modifier-separator: '--'; // modifier 间隔
   $state-prefix: 'is-'; // state|when  前缀
   ```
-  webpack中已经配置了alias
+  webpack中已经配置了alias
   ```json
   //package.json
   "alias": {
