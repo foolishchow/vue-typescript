@@ -17,17 +17,17 @@
 │   ├── index.html    // html-webpack-plugin 模板文件
 │   ├── inteface.ts   // ajax 请求配置文件  照着示例可以在pages/cache/index.tsx 看到效果
 │   ├── responses
-│   │   ├── common.ts // ajax 请求常用的数据类型定义
+│   │   ├── common.ts // ajax 请求常用的数据类型定义
 │   │   └── login.ts  // ajax 请求常用的数据类型定义
 │   └── router.ts   // vue-router 定义页面
 ├── images
-├── index.ts   //entry
+├── index.ts   // entry
 ├── internal  //内置的一些
 │   ├── ajax  //ajax 简单的封装
 │   │   ├── ajax.ts
 │   │   ├── config.ts
 │   │   └── index.ts
-│   ├── cache  //cookie和localstorage的adapter
+│   ├── cache  //cookie和localstorage的adapter
 │   │   ├── cache.ts
 │   │   └── index.ts //=> expose cacheInstance
 │   ├── declare.ts // declares 文件集合
@@ -44,7 +44,7 @@
 │   │   │   ├── function.scss   // BEM mixins  utils
 │   │   │   └── var.scss        // sass 全部变量
 │   │   ├── mixins.scss         // BEM mixins 实现
-│   │   ├── reset-plat.scss     // resetcss  pc
+│   │   ├── reset-plat.scss     // resetcss  pc
 │   │   └── reset.scss          // resetcss mobile
 │   └── utils       //工具类
 │       ├── common.ts
@@ -81,7 +81,7 @@
 │       ├── event
 │       │   └── index.ts
 │       └── root.ts
-├── styles                  //
+├── styles
 │   ├── animation.scss
 │   └── index.scss
 ├── tsconfig.json
