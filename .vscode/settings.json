@@ -13,18 +13,17 @@
     "**/.autod.conf.js": true,
     "**/.eslintignore": true,
     "**/.eslintrc": true,
-    "**/.gitignore": true,
+    // "**/.gitignore": true,
     "**/appveyor.yml": true,
     "**/.travis.yml": true,
     "**/node_modules": true,
     "coverage": true,
     "**/yarn.lock": true,
     "**/vue-shim.d.ts": true,
-    "**/.webpack": false,
     "components": true,
     "**/npm-shrinkwrap.json": true,
     "**/.babelrc": true,
-    "**/.webpackrc.ts": true,
-    "package.json": true
+    // "**/.webpackrc.ts": true,
+    "**/.webpack": true
   }
 }
